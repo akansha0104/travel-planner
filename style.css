@@ -2,7 +2,7 @@ body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
     background: linear-gradient(135deg, #1e3c72, #2a5298);
-    color: #333;
+    color: #eee6e6;
 }
 
 .app {
@@ -33,8 +33,8 @@ input {
 button {
     width: 95%;
     padding: 12px;
-    background: #2a5298;
-    color: white;
+    background: #d4d6d9;
+    color: rgb(0, 166, 255)
     border: none;
     border-radius: 10px;
 }
