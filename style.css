@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
     color: #333;
 }
 
@@ -12,11 +12,6 @@ body {
 
 header h1 {
     color: white;
-    font-size: 2.5rem;
-}
-
-header p {
-    color: #ddd;
 }
 
 .card {
@@ -25,7 +20,7 @@ header p {
     margin: 20px auto;
     width: 320px;
     border-radius: 15px;
-    box-shadow: 0px 10px 25px rgba(0,0,0,0.2);
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.3);
 }
 
 input {
@@ -33,29 +28,15 @@ input {
     padding: 12px;
     margin: 10px 0;
     border-radius: 8px;
-    border: 1px solid #ccc;
-    outline: none;
-}
-
-input:focus {
-    border-color: #667eea;
 }
 
 button {
     width: 95%;
     padding: 12px;
-    background: #667eea;
+    background: #2a5298;
     color: white;
     border: none;
     border-radius: 10px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-button:hover {
-    background: #5a67d8;
-    transform: scale(1.05);
 }
 
 .result-card {
@@ -64,14 +45,4 @@ button:hover {
     width: 350px;
     padding: 20px;
     border-radius: 15px;
-    box-shadow: 0px 10px 25px rgba(0,0,0,0.2);
-    text-align: left;
-}
-
-.result-card h2 {
-    color: #667eea;
-}
-
-.result-card h3 {
-    margin-top: 15px;
 }
