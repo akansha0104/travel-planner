@@ -17,13 +17,13 @@ function generatePlan() {
     let budget = document.getElementById("budget").value;
 
     if (!destination || !days || !budget) {
-        alert("Fill all fields!");
+        alert("Please fill all fields!");
         return;
     }
 
     let plan = `<div class="result-card">`;
     plan += `<h2>📍 ${destination}</h2>`;
-    plan += `<p>Days: ${days} | Budget: ₹${budget}</p><hr>`;
+    plan += `<p><b>Days:</b> ${days} | <b>Budget:</b> ₹${budget}</p><hr>`;
 
     for (let i = 1; i <= days; i++) {
         plan += `<h3>🗓️ Day ${i}</h3>`;
@@ -32,14 +32,33 @@ function generatePlan() {
         plan += `<p>🌙 Evening: ${randomPlan()}</p>`;
     }
 
-    plan += `<hr><h3>💰 Budget</h3>`;
-    plan += `<p>🏨 Hotel: ₹${budget * 0.4}</p>`;
-    plan += `<p>🍴 Food: ₹${budget * 0.3}</p>`;
-    plan += `<p>🚕 Travel: ₹${budget * 0.3}</p>`;
+    plan += `<hr><h3>💰 Budget Breakdown</h3>`;
+    plan += `<p>🏨 Hotel: ₹${Math.floor(budget * 0.4)}</p>`;
+    plan += `<p>🍴 Food: ₹${Math.floor(budget * 0.3)}</p>`;
+    plan += `<p>🚕 Travel: ₹${Math.floor(budget * 0.3)}</p>`;
 
     plan += `</div>`;
 
     document.getElementById("result").innerHTML = plan;
 
     saveTrip(destination, plan);
+}
+
+/* SAVE TRIP */
+function saveTrip(destination, plan) {
+    let trips = JSON.parse(localStorage.getItem("trips")) || [];
+    trips.push({ destination, plan });
+    localStorage.setItem("trips", JSON.stringify(trips));
+}
+
+/* SHOW SAVED TRIPS */
+function showTrips() {
+    let trips = JSON.parse(localStorage.getItem("trips")) || [];
+    let output = "<h2 style='color:white'>Saved Trips</h2>";
+
+    trips.forEach(trip => {
+        output += trip.plan + "<hr>";
+    });
+
+    document.getElementById("result").innerHTML = output;
 }
