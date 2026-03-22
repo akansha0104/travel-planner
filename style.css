@@ -33,14 +33,14 @@ input {
 button {
     width: 95%;
     padding: 12px;
-    background: #d4d6d9;
+    background: #3f7cd7;
     color: rgb(0, 166, 255)
     border: none;
     border-radius: 10px;
 }
 
 .result-card {
-    background: white;
+    background: rgb(126, 53, 199);
     margin: 20px auto;
     width: 350px;
     padding: 20px;
